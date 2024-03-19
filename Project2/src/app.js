@@ -24,3 +24,6 @@ new User('Vania', 18, true);
 new User('Vania2', 12, true);
 new User('Vania3', 22, true);
 new User('Vania4', 17, true);
+
+const User1 = User.all[0];
+const User2 = User.all[1]

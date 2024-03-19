@@ -18,8 +18,8 @@ class User {
     constructor(username, age, isOnline){
         this.username   = username
         this.age        = age
-        this.isOnline   = false
-        this.friends    = {}
+        this.isOnline   = isOnline
+        this.friends    = []
 
         User.all.push(this)
     }
@@ -29,19 +29,29 @@ class User {
     }
 
     addFriend (user) {
-        if (!(this.friends.find(user))) {
+
+        if (!(this.friends.find(user => user === user))) {
             this.friends.push(user)
         }
-        if (!(user.friends.find(this))) {
+        if (!(user.friends.find(user => this === this))) {
             user.friends.push(this)
         }
     }
 
     removeFriend (user) {
-        if (this.friends.find(user)) {
+        if (this.friends.find(user => user === user)) {
             this.friends.slice(user)
         }
-        if (user.friends.find(this)) {
+        if (user.friends.find(user => this === this)) {
+            user.friends.slice(this)
+        }
+    }
+
+    removeFriendByName (name) {
+        if (this.friends.find(user => user.username === name)) {
+            this.friends.slice(name)
+        }
+        if (user.friends.find( user => this.username === this)) {
             user.friends.slice(this)
         }
     }
