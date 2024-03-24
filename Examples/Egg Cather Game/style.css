@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(22,22,22);
+}
+
+.screen {
+    width: 500px;
+    height: 250px;
+    border: 1px solid #555;
+    position: relative;
+}
+
+.mold {
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(90deg, green, lightgreen, green);
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    
+    bottom: 0;
+    left: 256px;
+}
+
+.lead {
+    
+}
