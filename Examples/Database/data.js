@@ -19,7 +19,7 @@ const data = {
             contacts: [
                 mobile = '+373 123456789',
                 mail = 'marry@gmail.com',
-                whatsup = '+373 123456789',
+                whatsup = 'viber://pa?chatURI+373 123456789',
                 portofolio = 'https://marryportofolio.md'
             ]},
         

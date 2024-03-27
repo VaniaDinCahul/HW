@@ -23,7 +23,7 @@ const Render = (parentElement, data) => {
                 employee.contacts.forEach(contact => {
                     li = document.createElement('li')
                     a = document.createElement('a')
-
+                    
                     a.innerHTML = contact
                     a.href = contact
 
