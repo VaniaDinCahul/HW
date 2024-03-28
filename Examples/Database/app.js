@@ -1,4 +1,6 @@
 const Render = (parentElement, data) => {
+    // CURRENT TASK:
+    // Finish debugging code at line 26, it will make more copies than needed for no reason (no found reason).
 
     const table = document.createElement('table')
     let tr
@@ -20,13 +22,22 @@ const Render = (parentElement, data) => {
                 td.appendChild(img)
             }else if (prop == 'contacts') {
                 ul = document.createElement('ul')
-                employee.contacts.forEach(contact => {
+                
+                Object.keys(employee.contacts).forEach( contact =>{
+                    console.log(contact)
+                    
                     li = document.createElement('li')
                     a = document.createElement('a')
                     
-                    a.innerHTML = contact
-                    a.href = contact
-
+                    if (contact == 'display') {
+                        a.innerHTML = employee.contacts[contact]
+                        a.href = employee.contacts[contact]
+                    } else {
+                        a.innerHTML = contact
+                        a.href = employee.contacts[contact]
+                    }
+                    
+                    // console.log(contact)
                     li.appendChild(a)
                     ul.appendChild(li)
                 })
