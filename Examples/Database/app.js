@@ -1,6 +1,24 @@
+const renderChache = {
+
+}
+
+
+const search = (e) => {
+    let phrase = e.target.value
+    data.employees = data.employees.filter(employee => {
+        return employee.className.startsWith(phrase)
+    })
+    Render(content.data)
+}
+
+
+
+
 const Render = (parentElement, data) => {
     // CURRENT TASK:
     // Finish debugging code at line 26, it will make more copies than needed for no reason (no found reason).
+    parentElement.innerHTML = ''
+
 
     const table = document.createElement('table')
     let tr
@@ -8,7 +26,45 @@ const Render = (parentElement, data) => {
     let ul
     let li
     let a
+    let input
 
+    //Collumn headers
+    if(renderChache.headers) {
+        tr = renderChache.headers
+    }else {
+        tr = document.createElement("tr")
+        data.fields.forEach(key => {
+            th = document.createElement('th')
+            th.innerText = key
+            tr.appendChild(th)
+        })
+        renderChache.headers = tr
+    }
+    table.appendChild(tr)
+
+    //Search Form
+    if (renderChache.searchForm) {
+        tr = renderChache.searchForm
+    } else {
+        let form = document.createElement("form")
+        let input = document.createElement("input")
+        input.placeholder = "Search data"
+        input.addEventListener('keyup', (e) =>{search(e, data)})
+    
+        tr = document.createElement("tr")
+        td = document.createElement('td')
+        td.colSpan = 6
+        td.className = "search-bar"
+        
+        form.append(input)
+        td.appendChild(form)
+        tr.appendChild(td)
+        renderChache.searchForm = tr
+    }
+    table.appendChild(tr)
+    input = tr.firstElementChild.firstElementChild.firstElementChild
+
+    //Employees
     data.employees.forEach(employee => {
         
         tr = document.createElement('tr')
@@ -24,7 +80,7 @@ const Render = (parentElement, data) => {
                 ul = document.createElement('ul')
                 
                 Object.keys(employee.contacts).forEach( contact =>{
-                    console.log(contact)
+                    // console.log(contact)
                     
                     li = document.createElement('li')
                     a = document.createElement('a')
@@ -50,6 +106,7 @@ const Render = (parentElement, data) => {
         table.appendChild(tr)    
     });
     parentElement.appendChild(table)
+    input.focus()
 }
 
 const content = document.getElementById('content')

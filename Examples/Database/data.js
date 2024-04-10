@@ -1,4 +1,13 @@
 const data = {
+    fields: [
+        "Full name",
+        "Picture",
+        "Job Title",
+        "Experience (Years)",
+        "Salary (USD)",
+        "Contacts"
+    ],
+    
     employees: [
          {name: 'Joe',
             job: 'Designer',

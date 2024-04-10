@@ -3,8 +3,8 @@ body {
 }
 
 .carousel {
-    width: 520px;
-    height: 320px;
+    width: 800px;
+    height: 600px;
     border: 4px solid #222;
     perspective: 500px;
 }
@@ -15,13 +15,19 @@ body {
     border: 1px solid white;
     position: relative;
 
+    background-size: 800px 900px;
     /* background-image: url(./img/img-1.jpg); */
 
 }
 
 .carousel .slide .sq {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border: 1px solid green;
     position: absolute;
 }
+
+/* @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+} */
