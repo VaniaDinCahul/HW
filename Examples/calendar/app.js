@@ -16,7 +16,7 @@ navigator.geolocation.getCurrentPosition((position) => {
             let year = date.getFullYear()
             let month = date.getMonth()
 
-            fetch(`https://date.nager.at/api/v3/publicgolidays/2024/AT/${year}/${countryCode}`)
+            fetch(`https://date.nager.at/api/v3/PublicHolidays/${year}/${countryCode}`)
                 .then((response) => {
                     return response.json()
                 })
