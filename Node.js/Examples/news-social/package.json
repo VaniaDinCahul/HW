@@ -2,7 +2,7 @@
   "name": "news-social",
   "version": "1.0.0",
   "description": "simple website",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
