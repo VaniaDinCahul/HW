@@ -1,5 +1,5 @@
-import { News } from "./News.mjs";
-import { User } from "./user.mjs";
+import News from "./News.mjs";
+import User from "./user.mjs";
 
 const news = [
   new News("News one", "2024-04-24", new User("John Doe", "jd@example.host", '123'), 4),
