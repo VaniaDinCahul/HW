@@ -1,4 +1,4 @@
-import { News } from "./news.mjs";
+import { News } from "./News.mjs";
 import { User } from "./user.mjs";
 
 const news = [
