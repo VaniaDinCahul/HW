@@ -46,3 +46,13 @@ index
      |                  |                     |
    User                News              renderNews
 (User.mjs)          (News.mjs)            (ui.mjs)
+
+
+
+
+## IO / Console
+
+
+    -------> Ouput --------> Console.log(...)
+APP                                               text CONSOLE <--- intraction ---> user
+    <------- Input <-------- readline.question(..)
