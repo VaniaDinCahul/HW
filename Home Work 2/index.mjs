@@ -1,4 +1,3 @@
-import readline from "node:readline";
 import { readFile } from "node:fs/promises";
 
 
