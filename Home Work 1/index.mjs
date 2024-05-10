@@ -2,9 +2,9 @@ import readline from "node:readline";
 import { writeFile } from "node:fs/promises";
 
 
-// const WriteResult = async () => {
-  
-// }
+const writeResult = async (result) => {
+  await writeFile("./ratings.json", result);
+}
 
 
 let io = readline.createInterface({
@@ -21,9 +21,11 @@ io.question(
     ratings.forEach((element) => {
       avreageRating = avreageRating + element;
     });
-    avreageRating = avreageRating.toFixed(2);
+    avreageRating = (avreageRating / ratings.length).toFixed(2);
 
-    writeFile("./ratings.json", avreageRating)
+    writeResult("Average rating is: ", avreageRating);
+
+    io.close()
   }
 )
 
