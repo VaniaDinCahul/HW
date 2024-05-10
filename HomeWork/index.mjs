@@ -1,6 +1,10 @@
 import readline from "node:readline";
-import writeFile from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 
+
+// const WriteResult = async () => {
+  
+// }
 
 
 let io = readline.createInterface({
@@ -9,7 +13,7 @@ let io = readline.createInterface({
 })
 
 io.question(
-  "Insert How many different Ratings you want separated by a Space",
+  "Insert How many different Ratings you want separated by a Space ",
   (answear) => {
     let ratings = answear.split(" ").map((value) => parseFloat(value));
 
@@ -18,6 +22,8 @@ io.question(
       avreageRating = avreageRating + element;
     });
     avreageRating = avreageRating.toFixed(2);
-    writeFile("./ratings.json", avreageRating);
+
+    writeFile("./ratings.json", avreageRating)
   }
-);
+)
+
