@@ -3,7 +3,6 @@ import { readFile } from "node:fs/promises";
 
 
 let data = await readFile("./list.txt")
-data = JSON.parse(data)
 
 const parseList = () => {
 //  let temp_1 = data.split(" ")
