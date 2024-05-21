@@ -5,8 +5,8 @@ import { readFile } from "node:fs/promises";
 let data = await readFile("./list.txt")
 
 const parseList = () => {
-//  let temp_1 = data.split(" ")
- console.log(data);
+ let temp_1 = data.split(" ")
+ console.log(temp_1);
 }
 
 parseList()
