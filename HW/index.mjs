@@ -2,7 +2,11 @@
 import { readFile } from "node:fs/promises";
 
 
-let data = await readFile("./list.txt")
+let data
+
+readFile("./news.txt", (err, fileContent) => {
+  data = fileContent;
+});
 
 const parseList = () => {
  let temp_1 = data.split(" ")
