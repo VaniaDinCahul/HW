@@ -19,7 +19,30 @@ ParseCSS ( CSS )
     .
     .
     |
-   return ( Object )
+   Return ( Object )
+
+
+
+    OS (Windows)                                     |
+        |                                            |
+        ▼                                            |
+    Node.js(JS VM)                                   |
+        |                                            |
+        ▼                                            |
+    Process                                          |
+        |                                            |
+        ▼                                            |
+    Module (index.mjs)                               -
+        |                                            x   
+        ▼                                            x
+processMultipleCss (...)    // HIGH                  x <---- Catch error ----> message
+    |                                                |
+    +----> .map()                                    |
+             |                                       | 
+             +--> parseCSS (...)    // LOW         throw error
+                     |                               |
+                     |                               |
+                     +-------------------------------+
 
 
 
