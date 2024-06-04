@@ -1,0 +1,11 @@
+{
+    "title": "a",
+    "subtitle": "",
+    "description": "",
+    "image": "/product.jpg",
+    "tags": ["JS", "Learning", "IT"],
+    "price": {
+        "amount": "10",
+        "currency": "EUR"
+    }
+}
