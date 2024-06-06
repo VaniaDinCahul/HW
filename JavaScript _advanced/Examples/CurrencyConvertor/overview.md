@@ -1,1 +1,0 @@
-# JS / Currency convertor / API
