@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1001,
+        "title": "TITLE 1",
+        "subtitle": "",
+        "description": "DESCRIPTION 1",
+        "image": "/product1.webp",
+        "tags": ["JS", "learning"],
+        "price": {
+            "amount": 20,
+            "currnecy": "EUR"
+        }
+    },
+    {
+        "id": 1002,
+        "title": "TITLE 2",
+        "subtitle": "",
+        "description": "DESCRIPTION 2",
+        "image": "/product2.webp",
+        "tags": ["JS", "learning"],
+        "price": {
+            "amount": 10,
+            "currnecy": "EUR"
+        }
+    },
+        {
+          "id": 1003,
+          "title": "TITLE 3",
+          "subtitle": "",
+          "description": "DESCRIPTION 3",
+          "image": "/product3.webp",
+          "tags": ["JS", "learning"],
+          "price": {
+            "amount": 10,
+            "currnecy": "EUR"
+          }
+        }
+]
