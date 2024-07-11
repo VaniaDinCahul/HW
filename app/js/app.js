@@ -42,6 +42,10 @@ fetch("/api/product")
     btn.innerText = "Order";
     document.body.append(btn);
 
+    let infoBtn = document.createElement("button");
+    infoBtn.innerText = "Order Info";
+    document.body.append(btn);
+
     let nextBtn = document.createElement("button");
     nextBtn.innerText = ">>>";
     document.body.append(nextBtn);
@@ -62,6 +66,21 @@ fetch("/api/product")
          currentProductIndex--;
         renderProduct(currentProductIndex);
        }
+    });
+    infoBtn.addEventListener("click", () => {
+      let orderId = prompt("Enter order Id: ")
+      let pin = prompt("Enter order Pin: ");
+
+      fetch(`/api/orderinfo?order_id=${orderId}&pin=${pin}`)
+        .then(json => {
+          let orderInfo = json[0]
+          let p = document.createElement('p')
+          p.innerText = `
+          ${orderInfo.order_phone}\n
+          ${orderInfo.order_email}
+          `;
+          document.body.append(p)
+      })
     });
   }
 
@@ -129,7 +148,12 @@ fetch("/api/product")
         })
           .then(response => response.json())
           .then (json => {
-            e.target.innerText = json.message
+            e.target.innerText = json.message 
+
+            let a = document.createElement("a")
+            a.href = `api/pay/${orderId}`
+            a.innerText = 'PAY NOW'
+            e.target.parentElement.append(a)
           })
           .catch(err => {
             alert('Error')
