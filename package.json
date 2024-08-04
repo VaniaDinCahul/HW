@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "postgres": "^3.4.4"
+    "sass": "^1.77.8"
   }
 }

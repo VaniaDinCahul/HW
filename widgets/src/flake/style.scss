@@ -1,0 +1,9 @@
+.flake {
+    position: absolute;
+    border-radius: 100%;
+
+    width: var(--size);
+    height: var(--size);
+    background-image: radial-gradient(var(--color),tranparent 60%);
+
+}
