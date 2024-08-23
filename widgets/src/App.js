@@ -2,15 +2,23 @@
 // import Description from "./Description";
 // import Logo from "./Logo";
 import Flake from './flake/component'
+import Snow from './snow/component'
+import { randInt, randColor } from "../utils/generators";
+import { useState}  from 'react'
 
 function App() {
+
+  let [showChild, setShowChild] = useState(true)
+
   return (
     <div className="App">
-      ! ! !WIDGET APP STARTING ! ! !
-      <div className="App">
+      
 
-      <Flake />
-      </div>
+    <Snow 
+    quantity={5}
+    />
+
+
     </div>
   );
 }
